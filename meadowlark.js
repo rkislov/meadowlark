@@ -2,13 +2,8 @@ const express = require('express')
 
 const app = express()
 
-const fortunes = [
-    "Победи свои страхи, или он победят тебя",
-    "Рекам нужны истоки",
-    "Не бойся неведомого",
-    "Тебя ждет приятный сюрприз",
-    "Будь проще везде, где только можно",
-]
+const fortune = require('./lib/fortune')
+
 const handlebars = require('express-handlebars')
     .create({defaultLayout: 'main'})
 app.engine('handlebars', handlebars.engine)
@@ -20,8 +15,7 @@ app.get('/', (req, res)=>{
    res.render('home')
 })
 app.get('/about', (req, res)=>{
-    const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)]
-    res.render('about', {fortune: randomFortune})
+    res.render('about', {fortune: fortune.getFortunes()})
 })
 app.use((req,res)=>{
     res.status(404)

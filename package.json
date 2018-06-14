@@ -1,12 +1,12 @@
 {
   "name": "meadowlark",
   "version": "1.0.0",
-  "description": "",
+  "description": "O'Relly webdevelopment with node js & express",
   "main": "meadowlark.js",
   "scripts": {
     "start": "nodemon meadowlark.js"
   },
-  "author": "",
+  "author": "Roman Kislov",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
